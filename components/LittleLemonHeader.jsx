@@ -1,16 +1,29 @@
-import { View, Text } from "react-native";
-import { Dimensions } from 'react-native';
+import { View, Text, StyleSheet } from "react-native";
+import { Dimensions } from "react-native";
 
 const LittleLemonHeader = () => {
-    const screenWidth = Dimensions.get('window').width;
-
   return (
-    <View style={{ padding: 40,width: screenWidth, alignSelf: "center", display: "flex", justifyContent: "center", alignItems: "center" ,backgroundColor: "#F4CE14" }}>
-      <Text style={{ fontSize: 30, color: "black" }}>
-        Little Lemon
-      </Text>
+    <View style={styleSheet.container}>
+      <Text style={styleSheet.text}>Little Lemon</Text>
     </View>
   );
 };
+const screenWidth = Dimensions.get("window").width;
+
+const styleSheet = StyleSheet.create({
+  container: {
+    padding: 40,
+    width: screenWidth,
+    alignSelf: "center",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#EE9972",
+  },
+  text: {
+    fontSize: 30,
+    color: "#333333",
+  },
+});
 
 export default LittleLemonHeader;
