@@ -1,26 +1,55 @@
 import { useState } from "react";
-import { ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
+import {
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+} from "react-native";
 
 const WelcomeScreen = () => {
   const [name, onChangeName] = useState("");
 
   return (
-    <ScrollView style={styles.scroll} indicatorStyle={"white"}>
-      <View style={styles.container}>
+    <KeyboardAvoidingView
+      style={styles.container}
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+    >
+      <ScrollView
+        keyboardDismissMode="on-drag"
+        style={styles.scroll}
+        indicatorStyle={"white"}
+      >
         <Text style={styles.text}>Welcome to Little Lemon</Text>
         <Text style={styles.text2}>
           LittleLemon is a charming neighborhood bistro that serves simple food
           andclassic cocktails in a lively but casual environment. We wouldlove
-          to hear more about yourexperience with us!F223
+          to hear more about yourexperience with us!F223333
         </Text>
         <TextInput
           style={styles.input}
           value={name}
           placeholder="First Name"
           onChangeText={onChangeName}
+          multiline={true}
+          maxLength={5}
+          keyboardType={"url"}
         />
-      </View>
-    </ScrollView>
+        <TextInput
+          style={styles.input}
+          value={name}
+          placeholder="First Name"
+          onChangeText={onChangeName}
+        />
+        <TextInput
+          style={styles.input}
+          value={name}
+          placeholder="First Name"
+          onChangeText={onChangeName}
+        />
+      </ScrollView>
+    </KeyboardAvoidingView>
   );
 };
 
