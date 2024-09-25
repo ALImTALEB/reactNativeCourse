@@ -1,14 +1,15 @@
 import { StyleSheet, View } from "react-native";
 import LittleLemonHeader from "./components/LittleLemonHeader";
 import Footer from "./components/Footer";
-import MenuItems from "./components/MenuItems";
+import WelcomeScreen from "./components/WelcomeScreen";
 
 export default function App() {
   return (
     <>
       <View style={styleSheet.container}>
         <LittleLemonHeader />
-        <MenuItems />
+        <WelcomeScreen />
+        {/* <MenuItems /> */}
       </View>
       <View style={styleSheet.footerContainer}>
         <Footer />
@@ -21,6 +22,9 @@ const styleSheet = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#333333",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-around",
   },
   text: {
     fontSize: 30,

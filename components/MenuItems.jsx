@@ -28,7 +28,7 @@ const menuItemsToDisplay = [
   {
     title: "Appetizers",
     data: [
-      { name: "Hummus", price: "$5.00" },
+      { name: "Hum777mus", price: "$5.00" },
       { name: "Moutabal", price: "$5.00" },
       { name: "Falafel", price: "$7.50" },
       { name: "Marinated Olives", price: "$5.00" },
@@ -83,7 +83,9 @@ const MenuItems = () => {
   const renderItem = ({ item }) => <Item name={item.name} price={item.price} />;
 
   const renderSectionHeader = ({ section: { title } }) => (
-    <Text style={styless.headerText}>{title} </Text>
+    <View>
+      <Text style={styless.headerText}>{title} </Text>
+    </View>
   );
 
   return (
